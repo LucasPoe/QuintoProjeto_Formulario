@@ -39,6 +39,32 @@ class Validator {
     // verifica se um input tem um número minino de caracteres 
     minlength(input, minValue) {
 
+        let inputLength = input.value.length
+
+        let errorMessge = 'O campo precisa ter pe menos ${minValue} caracteres';
+
+        if (inputLength < minValue) {
+            this.printMenssage(input, errorMessage);
+
+        }
+
+    }
+    // metodo para imprimir mensagens de erro na tela
+    printMenssage(input, msg) {
+
+        let template = document.querySelector('.error-validation').cloneNode(true);
+
+
+        templatem.textContent = msg;
+
+        let inputParent = input.parentNode;
+
+        template.classList.remove('template');
+
+        inputParent = appendChild(template);
+
+
+
     }
 }
 
